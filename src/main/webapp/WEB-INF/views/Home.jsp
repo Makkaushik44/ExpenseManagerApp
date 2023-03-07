@@ -8,6 +8,6 @@
 </head>
 <body>
 <h2>You have Successfully Login </h2>
-
+<a href="logout">LogOut</a>
 </body>
 </html>

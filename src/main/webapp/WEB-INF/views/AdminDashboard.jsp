@@ -18,5 +18,6 @@
 <a href="listvendor">List Vendor</a> <br><br>
 <a href="accounttype">Add Account Type</a> <br><br>
 <a href="listaccounttype">List Account Type</a> <br><br>
+<a href="logout">LogOut</a>
 </body>
 </html>

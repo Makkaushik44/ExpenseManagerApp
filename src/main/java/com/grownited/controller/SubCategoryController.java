@@ -58,6 +58,14 @@ public class SubCategoryController {
     	subCategoryDao.deleteSubCategory(SubCategoryId);
     	return "redirect:/sublistcategories";
     }
+    
+    @GetMapping("/viewsubcategory/{subCategoryId}")
+    public String viewSubCategory(@PathVariable("subCategoryId") Integer SubCategoyId,Model model) {
+    	SubCategoryBean subCategoryBean =subCategoryDao.getSubCategoryById(SubCategoyId);
+    	model.addAttribute("subCategoryBean",subCategoryBean);
+		return "ViewSubCategory";
+    	
+    }
      
     
     

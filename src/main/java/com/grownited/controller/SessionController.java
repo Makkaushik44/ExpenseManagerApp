@@ -1,6 +1,10 @@
 package com.grownited.controller;
 
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,7 +73,7 @@ public class SessionController {
 	}
 	
 	@PostMapping("/authentication")//this the url
-	public String authentication(LoginBean login, Model model) {
+	public String authentication(LoginBean login, Model model, HttpServletResponse response, HttpSession session) {
 		System.out.println(login.getEmail());
 		
 		UserBean userBean =userDao.authenticateUser(login);
@@ -84,6 +88,20 @@ public class SessionController {
 			return "Login";
 			
 		}else {
+			//valid
+			
+			//cookie
+			Cookie c1= new Cookie("userId",userBean.getUserId()+"");
+			Cookie c2= new Cookie("firstName",userBean.getFirstName()+"");
+			//add cookie
+			response.addCookie(c1);
+			response.addCookie(c2);
+			
+			//session add
+			session.setAttribute("userId",userBean.getFirstName());
+			
+			//max inactive internal time
+			//session.setMaxInactiveInterval(60*5);
 			
 			if(userBean.getRole()==1) {
 				return "redirect:/admindashboard";
@@ -148,6 +166,11 @@ public class SessionController {
 		userDao.updateMyPassword(upBean);
 		return "Login";
 		}
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "redirect:/login";
 	}
 	
 
