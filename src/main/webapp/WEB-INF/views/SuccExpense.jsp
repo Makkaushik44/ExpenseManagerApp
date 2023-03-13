@@ -1,15 +1,15 @@
+<%@page import="java.util.Date"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+<title>SuccExpense</title>
 </head>
 <body>
-<h2>You have Successfully Login </h2>
-<a href="expense">Add Expense</a><br><br>
-<a href="income">Add Income</a><br><br>
-<a href="logout">LogOut</a>
+<h2>hey!!Successfully You Added Expense</h2>
+<a href="listexpense">View List Expense</a>
 </body>
 </html>

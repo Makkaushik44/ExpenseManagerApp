@@ -27,11 +27,11 @@ public class StatusDao {
 
 		String selectQuery = "select * from status ";
 
-		List<StatusBean> list =  stmt.query(selectQuery, new BeanPropertyRowMapper<StatusBean>(StatusBean.class));
+		List<StatusBean> statusList =  stmt.query(selectQuery, new BeanPropertyRowMapper<StatusBean>(StatusBean.class));
 		
 		//c1 c2 c3 
 		
-		return list;
+		return statusList;
 	}
 
 }

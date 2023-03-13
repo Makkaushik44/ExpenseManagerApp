@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.grownited.bean.CategoryBean;
+
 import com.grownited.bean.SubCategoryBean;
 
 @Repository
@@ -27,7 +27,7 @@ public class SubCategoryDao {
 	}
 	public List<SubCategoryBean> getAllCategory() {
 
-		String selectQuery = "select * from subcategory where deleted = false";
+		
          
         String joinQuery = "select c.categoryName , sc.categoryId,sc.subCategoryId,sc.subCategoryName,sc.deleted from category c , subcategory sc where c.categoryId = sc.categoryId and sc.deleted = false";
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,7 @@
 		
 		<input type="submit" value="Signup"/>
  </form>
- <a href="login">LogIn</a>
+Already have an Account? <a href="login">LogIn</a>
 
 </body>
 </html>

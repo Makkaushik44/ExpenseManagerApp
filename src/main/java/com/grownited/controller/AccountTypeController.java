@@ -35,8 +35,8 @@ public class AccountTypeController {
 	public String listAccountType(Model model) {
 
 		// pull all category from db-table
-		List<AccountTypeBean> list = accountTypeDao.getAllAccountType();
-		model.addAttribute("list",list);
+		List<AccountTypeBean> aclist = accountTypeDao.getAllAccountType();
+		model.addAttribute("aclist",aclist);
 		return "ListAccountType";
 	}
 

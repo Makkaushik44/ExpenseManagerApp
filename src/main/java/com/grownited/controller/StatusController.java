@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.grownited.bean.CategoryBean;
+
 import com.grownited.bean.StatusBean;
 import com.grownited.dao.StatusDao;
 
@@ -35,8 +35,8 @@ public class StatusController {
 	public String listStatus(Model model) {
 
 		// pull all category from db-table
-		List<StatusBean> list = statusDao.getAllStatus();
-		model.addAttribute("list",list);
+		List<StatusBean> statusList = statusDao.getAllStatus();
+		model.addAttribute("statusList",statusList);
 		return "ListStatus";
 	}
 }

@@ -1,3 +1,4 @@
+<%@page import="com.grownited.bean.SubCategoryBean"%>
 <%@page import="com.grownited.bean.CategoryBean"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -12,6 +13,7 @@
     
 	<%
 		List<CategoryBean> list = (List<CategoryBean>) request.getAttribute("list");
+
 	%>
 
 	<form action="savesubcategory" method="post">

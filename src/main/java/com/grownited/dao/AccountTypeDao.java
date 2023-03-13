@@ -28,11 +28,11 @@ public class AccountTypeDao {
 
 		String selectQuery = "select * from accounttype ";
 
-		List<AccountTypeBean> list =  stmt.query(selectQuery, new BeanPropertyRowMapper<AccountTypeBean>(AccountTypeBean.class));
+		List<AccountTypeBean> aclist =  stmt.query(selectQuery, new BeanPropertyRowMapper<AccountTypeBean>(AccountTypeBean.class));
 		
 		//c1 c2 c3 
 		
-		return list;
+		return aclist;
 	}
 
 }

@@ -11,14 +11,14 @@
 <body>
 <table border="1">
  <%
-	List<StatusBean> list =  (List<StatusBean>)request.getAttribute("list");
+	List<StatusBean> statusList =  (List<StatusBean>)request.getAttribute("list");
  %>
 	<tr>
 		<th>CategoryId</th>
 		<th>CategoryName</th>
 
 </tr>
-<%for(StatusBean sb:list){ %>
+<%for(StatusBean sb:statusList){ %>
 	<tr>
 		<td> <%=sb.getStatusId()%> </td>
 		<td> <%=sb.getStatusName()%> </td>

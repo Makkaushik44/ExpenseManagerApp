@@ -8,13 +8,13 @@
 </head>
 <body>
 <form action="savestatus" method="post">
-Staus Name:<input type="text" name="StatusName"><br><br>
+Status Name:<input type="text" name="StatusName"><br><br>
 
 <input type="submit" value="submit"/>
 </form>
 <br>
 <a href="liststatus">List Status</a><br><br>
-<a href="admindashboard">Return Mian Page</a>
+<a href="admindashboard">Return Main Page</a>
 
 </body>
 </html>

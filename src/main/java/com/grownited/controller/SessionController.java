@@ -33,7 +33,7 @@ public class SessionController {
 	@GetMapping("/signup")
 	public String signup() {
 		
-		return "Signup";
+		return "Signup";     
 		
 	}
 	@GetMapping("/login")
@@ -91,14 +91,18 @@ public class SessionController {
 			//valid
 			
 			//cookie
-			Cookie c1= new Cookie("userId",userBean.getUserId()+"");
-			Cookie c2= new Cookie("firstName",userBean.getFirstName()+"");
-			//add cookie
+			//cookie 
+			Cookie c1 = new Cookie("userId",userBean.getUserId()+"");
+			Cookie c2 = new Cookie("firstName", userBean.getFirstName());
+			//add cookie 
 			response.addCookie(c1);
 			response.addCookie(c2);
 			
-			//session add
-			session.setAttribute("userId",userBean.getFirstName());
+			
+			//session 
+			session.setAttribute("userId", userBean.getUserId());
+			
+		
 			
 			//max inactive internal time
 			//session.setMaxInactiveInterval(60*5);

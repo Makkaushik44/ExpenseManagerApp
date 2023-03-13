@@ -11,7 +11,7 @@
 <body>
 <table border="1">
  <%
-	List<VendorBean> list =  (List<VendorBean>)request.getAttribute("list");
+	List<VendorBean> vendorlist =  (List<VendorBean>)request.getAttribute("vendorlist");
  %>
 	<tr>
 		<th>VendorId</th>
@@ -19,7 +19,7 @@
 		<th>Deleted?</th>
 		<th>Action</th>
 	</tr>
-<%for(VendorBean vb:list){ %>
+<%for(VendorBean vb:vendorlist){ %>
 	<tr>
 		<td> <%=vb.getVendorId()%> </td>
 		<td> <%=vb.getVendorName()%> </td>
