@@ -31,7 +31,7 @@ public class SessionController {
 	
 	//jsp open
 	@GetMapping("/signup")
-	public String signup() {
+	public String signup() { 
 		
 		return "Signup";     
 		
@@ -59,17 +59,25 @@ public class SessionController {
 	
 	  //jsp input process
 	@PostMapping("/saveuser") // this is saveuser url so all data are save temporaly in bean folder under USerBean java class
-	public String saveUser(UserBean user) {  //CAMEL CASE USE JAVA
+	public String saveUser(UserBean user,Model model) {  //CAMEL CASE USE JAVA
 		
 		System.out.println(user.getFirstName());
-		System.out.println(user.getLastName());
 		System.out.println(user.getEmail());
-		System.out.println(user.getPassword());
+		System.out.println(user.getGender());
 
-		userDao.insertUser(user);
-		return "Login";
-		
-		
+		// validation
+
+				// dbValidation
+				
+				UserBean userBean = userDao.getUserByEmail(user.getEmail());
+				if (userBean == null) {
+					// insert
+					userDao.insertUser(user);
+					return "Login"; 
+				}else {
+					model.addAttribute("error","Email is already Registerd with Us");
+					return "Signup";
+				}
 	}
 	
 	@PostMapping("/authentication")//this the url
@@ -101,6 +109,9 @@ public class SessionController {
 			
 			//session 
 			session.setAttribute("userId", userBean.getUserId());
+			
+			//display the session username
+			session.setAttribute("user", userBean);
 			
 		
 			

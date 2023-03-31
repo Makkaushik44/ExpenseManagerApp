@@ -8,6 +8,12 @@ public class ExpenseBean {
     private Integer amount;
     private Date date;
     private String description;
+    
+    private String categoryName;
+    private String subCategoryName;
+    private String vendorName;
+    private String accountTypeName;
+    private String statusName;
 	public String getTitle() {
 		return title;
 	}
@@ -75,8 +81,37 @@ public class ExpenseBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	
-    
-    
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	public String getSubCategoryName() {
+		return subCategoryName;
+	}
+	public void setSubCategoryName(String subCategoryName) {
+		this.subCategoryName = subCategoryName;
+	}
+	public String getVendorName() {
+		return vendorName;
+	}
+	public void setVendorName(String vendorName) {
+		this.vendorName = vendorName;
+	}
+	public String getAccountTypeName() {
+		return accountTypeName;
+	}
+	public void setAccountTypeName(String accountTypeName) {
+		this.accountTypeName = accountTypeName;
+	}
+	public String getStatusName() {
+		return statusName;
+	}
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+
+   
 }

@@ -27,7 +27,7 @@ public class StatusController {
 	public String saveStatus(StatusBean statusBean) {
 		
 		statusDao.insertStatus(statusBean);
-		return "Status";
+		return "redirect:/liststatus";
 		
 	}
 	

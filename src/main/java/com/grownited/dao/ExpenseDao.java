@@ -30,9 +30,11 @@ public class ExpenseDao {
 	
 
 	public List<ExpenseBean> getAllExpense(ExpenseBean expenseBean,Integer userId) {
-		String selectQuery = "select * from expense where userId=? ";
+		/* String selectQuery = "select * from expense where userId=? "; */
+		
+		String joinQuery="select e.title,e.amount,e.date,e.description,a.accountTypeName,s.statusName,c.categoryName,sc.subCategoryName,v.vendorName from expense e, accountType a, status s, category c, subCategory sc, vendor v  where  e.categoryId=c.categoryId and e.subCategoryId=sc.subCategoryId and  e.vendorId=v.vendorId and  e.accountTypeId=a.accountTypeId and e.statusId= s.statusId  and userId = ?";
 
-		List<ExpenseBean> expenselist =  stmt.query(selectQuery, new BeanPropertyRowMapper<ExpenseBean>(ExpenseBean.class),new Object[]{userId});
+		List<ExpenseBean> expenselist =  stmt.query(joinQuery, new BeanPropertyRowMapper<ExpenseBean>(ExpenseBean.class),new Object[]{userId});
 		
 		
 		

@@ -106,7 +106,7 @@ public class ExpenseController {
 		
 		expenseBean.setUserId(userId);
 		expenseDao.addExpense(expenseBean);
-		return "SuccExpense";
+		return "redirect:/listexpense";
 	}
 	@GetMapping("/listexpense")
 	public String listExpense(Model model,ExpenseBean expenseBean,HttpServletRequest request) {

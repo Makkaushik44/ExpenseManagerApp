@@ -1,5 +1,7 @@
 package com.grownited.bean;
 
+import java.sql.Date;
+
 public class UserBean {
 	private Integer userId;
 	private	String firstName;
@@ -8,6 +10,10 @@ public class UserBean {
 	private String password;
 	private Integer role;
 	private String otp;
+	private Date DOB;
+	private String gender;
+	private String createdAt;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -51,6 +57,24 @@ public class UserBean {
 		this.otp = otp;
 	}
 	
+	public Date getDOB() {
+		return DOB;
+	}
+	public void setDOB(Date dOB) {
+		DOB = dOB;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
 	
-	
+		
 }

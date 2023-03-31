@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.bean.AccountTypeBean;
-import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.IncomeBean;
 import com.grownited.bean.StatusBean;
 import com.grownited.dao.AccountTypeDao;

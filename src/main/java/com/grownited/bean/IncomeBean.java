@@ -12,6 +12,8 @@ public class IncomeBean {
 	private Integer statusId;
 	private Integer amount;
 	private String description;
+	private String accountTypeName;
+	private String statusName;
 	public Integer getIncomeId() {
 		return incomeId;
 	}
@@ -60,6 +62,19 @@ public class IncomeBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getAccountTypeName() {
+		return accountTypeName;
+	}
+	public void setAccountTypeName(String accountTypeName) {
+		this.accountTypeName = accountTypeName;
+	}
+	public String getStatusName() {
+		return statusName;
+	}
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+	
 	
 	
 

@@ -23,11 +23,13 @@ public class IncomeDao {
 		
 		stmt.update(insertQuery,incomeBean.getTitle(), incomeBean.getDate(),incomeBean.getUserId(),incomeBean.getAccountTypeId(),incomeBean.getStatusId(),incomeBean.getAmount(),incomeBean.getDescription());
 	}
+	
 	public List<IncomeBean> getAllIncome(IncomeBean incomeBean,Integer userId) {
-		String selectQuery = "select * from income where userId=? ";
-
-		List<IncomeBean> incomelist =  stmt.query(selectQuery, new BeanPropertyRowMapper<IncomeBean>(IncomeBean.class),new Object[]{userId});
+		/* String selectQuery = "select * from income where userId=? "; */
 		
+		String joinQuery=" select i.title, i.amount,i.date,i.description, a.accountTypeName, s.statusName from income i, accountType a, status s where i.accountTypeId=a.accountTypeId and s.statusId= i.statusId and userId = ?";
+
+		List<IncomeBean> incomelist =  stmt.query(joinQuery, new BeanPropertyRowMapper<IncomeBean>(IncomeBean.class),new Object[] {userId});
 		
 		
 		return incomelist;
