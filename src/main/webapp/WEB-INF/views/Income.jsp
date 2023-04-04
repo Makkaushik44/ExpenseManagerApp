@@ -18,12 +18,12 @@
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>Form Elements</h1>
+      <h1>Income Form</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Forms</li>
-          <li class="breadcrumb-item active">Elements</li>
+          <li class="breadcrumb-item">Manage data</li>
+          <li class="breadcrumb-item active">Add Income</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -36,7 +36,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">General Form Elements</h5>
+              <h5 class="card-title">Add Income</h5>
 <%
         List<AccountTypeBean> aclist = (List<AccountTypeBean>) request.getAttribute("aclist");
         List<StatusBean> statusList = (List<StatusBean>) request.getAttribute("statusList");

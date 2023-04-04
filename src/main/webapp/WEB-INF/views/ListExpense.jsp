@@ -37,7 +37,7 @@
         
           <!-- below for add buttton-->
         <div class="iconslist"  align="right">
-        <a href="income">
+        <a href="expense">
           <i class="bi bi-plus-square-fill"></i>
           </a> 
         </div>

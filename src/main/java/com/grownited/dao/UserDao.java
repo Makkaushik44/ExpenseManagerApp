@@ -1,5 +1,7 @@
 package com.grownited.dao;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,11 +21,25 @@ public class UserDao {
 	
 	//add customer -- signup 
 	public void insertUser(UserBean userBean) {
+		Calendar c = Calendar.getInstance();
+
+		int ddd = c.get(Calendar.DATE);
+		int mmm = c.get(Calendar.MONTH) + 1;
+		int yyy = c.get(Calendar.YEAR);
+
+		String today = "";
+
+		if (mmm < 10) {
+			today = ddd + "-0" + mmm + "-" + yyy;
+		} else {
+			today = ddd + "-" + mmm + "-" + yyy;
+		}
+		System.out.println("TODAY => " + today);
 		//
-		String insertQuery = "insert into users (firstName,lastName,email,password,DOB,gender,role) values (?,?,?,?,?,?,?)";
+		String insertQuery = "insert into users (firstName,lastName,email,password,DOB,gender,role,createdAt) values (?,?,?,?,?,?,?,?)";
 
 		//role -> 2 for customer/buyer/user 
-		stmt.update(insertQuery,userBean.getFirstName(),userBean.getLastName(),userBean.getEmail(),userBean.getPassword(),userBean.getDOB(),userBean.getGender(),2);//query execute 
+		stmt.update(insertQuery,userBean.getFirstName(),userBean.getLastName(),userBean.getEmail(),userBean.getPassword(),userBean.getDOB(),userBean.getGender(),2,today);//query execute 
 		
 		
 	}
@@ -89,6 +105,7 @@ public class UserDao {
 		}
 		return null;
 	}
+	
 	
 	
 }
