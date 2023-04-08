@@ -15,12 +15,12 @@
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>Category Form</h1>
+      <h1>Vendor Form</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
           <li class="breadcrumb-item">ManageData</li>
-          <li class="breadcrumb-item active">CategoryForm</li>
+          <li class="breadcrumb-item active">VendorForm</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -31,7 +31,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Add category </h5>
+              <h5 class="card-title">Add Vendor </h5>
 
               <!-- General Form Elements -->
               <form action="savevendor"  method="post" >
@@ -64,6 +64,7 @@
         </div>
       </div>
     </section>
+          <jsp:include page="AllJs.jsp"></jsp:include>
 
   </main>
 

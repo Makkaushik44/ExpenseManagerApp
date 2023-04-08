@@ -70,8 +70,10 @@
         <td> <%=scb.getCategoryName()%> </td>		
 		<td> <%=scb.getSubcategoryName()%> </td>
 		<td> <%=scb.getDeleted()%> </td>
-		<td> <a href="deletesubcategory/<%=scb.getSubcategoryId()%>">delete</a>
-		<a href="viewsubcategory/<%=scb.getSubcategoryId()%>">view</a></td>
+		<td>
+			<a href="deletesubcategory/<%=scb.getSubcategoryId()%>"><i class="bi bi-trash text-danger"></i> </a>
+			<a href="editsubcategory?subCategoryId=<%=scb.getSubcategoryId() %>"><i class="bi bi-pencil text-primary"></i></a>
+										</td>
 	</tr>
 	<%} %>
 </tbody>
@@ -80,8 +82,6 @@
               </div>
             </div>
           </div>
-
-          
 
           
 

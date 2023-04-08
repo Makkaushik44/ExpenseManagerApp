@@ -61,8 +61,8 @@
           </li>
           
            <li>
-            <a href="../listincome">
-              <i class="bi bi-circle"></i><span>Income List</span>
+            <a href="../listuser">
+              <i class="bi bi-circle"></i><span>User List</span>
             </a>
           </li>
           

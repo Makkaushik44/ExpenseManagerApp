@@ -56,7 +56,7 @@
                   <div class="col-sm-8">
                     <select class="form-select" aria-label="Default select example" name="categoryId">
                      
-
+       <option  selected value="-1">Select Category</option>
 			<%
 				for (CategoryBean cb : list) {
 			%>

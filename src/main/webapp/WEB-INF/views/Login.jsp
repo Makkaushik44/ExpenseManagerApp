@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +67,7 @@
                     <p class="text-center small">Enter your email & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="authentication" method="post">
+                  <form class="row g-3 needs-validation" novalidate action="authentication" method="post" >
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
@@ -78,6 +78,7 @@
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <span id="passwError" class="error"></span>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -88,7 +89,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" value="LogIn">Login</button>
+                      <button class="btn btn-primary w-100" type="submit" value="LogIn" >Login</button>
                     </div>
                      <div class="col-12">
                       <p class="small mb-0">Don't Remember Password? <a href="forgetpassword">ForgotPassword</a></p>
@@ -115,6 +116,26 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
  
+ 
+ <script src="assets/js/main.js"></script>
+
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+		rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+	<script>
+		
+	<%if (request.getAttribute("error") != null) {%>
+	toastr
+	.error("<%=request.getAttribute("error")%>")
+	<%}%>
+		 
+	</script>
  
 
 </body>

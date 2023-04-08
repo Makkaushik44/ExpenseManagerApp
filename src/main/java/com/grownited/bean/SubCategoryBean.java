@@ -5,6 +5,7 @@ public class SubCategoryBean {
 	private String subcategoryName;
 	private Boolean deleted;
 	private String categoryName;
+	
 	public Integer getSubcategoryId() {
 		return subcategoryId;
 	}

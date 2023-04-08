@@ -9,12 +9,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.grownited.bean.ExpenseChartBean;
+import com.grownited.bean.ProfileBean;
+import com.grownited.bean.UserBean;
 
 @Repository
 public class AdminDao {
 
 	@Autowired
 	JdbcTemplate stmt;
+	
+
+	
 	
 	public Integer TotalExpenseForCurrentDate() {
 		String countQuery = "select sum(amount) from expense where date= ?";
@@ -96,4 +101,20 @@ public class AdminDao {
 		return stmt.query(selectQ, new BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class));
 
 	}
+     public void updateImageUrl(ProfileBean profileBean) {
+    	 
+ 		stmt.update("update users set imageUrl = ? where userId = ?",profileBean.getImageUrl(),profileBean.getUserId());
+ 	}
+     
+     //User List
+     public List<UserBean> getAllUser() {
+
+ 		String selectQuery = "select * from users";
+
+ 		List<UserBean> userList =  stmt.query(selectQuery, new BeanPropertyRowMapper<UserBean>(UserBean.class));
+ 		
+ 		//c1 c2 c3 
+ 		
+ 		return userList;
+ 	}
 }

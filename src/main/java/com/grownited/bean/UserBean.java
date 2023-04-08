@@ -14,6 +14,8 @@ public class UserBean {
 	private String gender;
 	private String createdAt;
 	
+	private String imageUrl;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -75,6 +77,14 @@ public class UserBean {
 	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	
+	
 	
 		
 }

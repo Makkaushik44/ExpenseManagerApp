@@ -67,7 +67,7 @@
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-3 col-md-3">
+            <div class="col-xxl-3 col-md-5">
               <div class="card info-card revenue-card">
 
                 <div class="filter">
@@ -88,7 +88,7 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cash-coin"></i>
+                      <i class="bi bi-cash-coin" style="color:red"></i>
                     </div>
                     <div class="ps-3">
                       <h6>${TotalExpense }</h6>
@@ -176,7 +176,7 @@
             
 
             <!-- Reports -->
-            <div class="col-12">
+            <div class="col-9">
               <div class="card">
 
                 
@@ -228,7 +228,7 @@
 														 '<%=e.getMonth()%>',
 															<%}%>],
 													datasets : [ {
-														label : '# of OrderAmount',
+														label : '# of ExpenseAmount',
 														data : [
 															<%for (ExpenseChartBean e : chartData) {%>
 																	<%=e.getExpenseAmount()%>,

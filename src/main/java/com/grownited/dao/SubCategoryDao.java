@@ -53,12 +53,22 @@ public class SubCategoryDao {
 		return subCategoryBean;
 	}
 
-	// update
 
 	// delete
+
+	
 	public void deleteSubCategory(Integer subCategroyId) {
 		String updateQuery ="update subcategory set deleted=true where subCategoryId= ? ";
 		stmt.update(updateQuery,subCategroyId);
+	}
+	
+	
+	// update
+	public void updateSubCategory(SubCategoryBean subCategoryBean) {
+		System.out.println("hey this is update subcategory");
+		stmt.update("update subCategory set subCategoryName = ? , categoryId = ? where subCategoryId = ? ",subCategoryBean.getSubcategoryName(), subCategoryBean.getCategoryId(), subCategoryBean.getSubcategoryId());
+		
+		
 	}
 	
 

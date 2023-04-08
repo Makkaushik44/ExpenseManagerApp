@@ -14,19 +14,19 @@
 <head>
 <jsp:include page="AllCss.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
-<title>Add Income</title>
+<title>Add Expense</title>
 </head>
 <body>
 <jsp:include page="UserSideBar.jsp"></jsp:include>
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>Form Elements</h1>
+      <h1>Expense Form</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Forms</li>
-          <li class="breadcrumb-item active">Elements</li>
+          <li class="breadcrumb-item">Manage Data</li>
+          <li class="breadcrumb-item active">Expense</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -39,7 +39,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">General Form Elements</h5>
+              <h5 class="card-title">Expense Form</h5>
 <%
 		List<CategoryBean> list = (List<CategoryBean>) request.getAttribute("list");
         List<SubCategoryBean> sublist = (List<SubCategoryBean>) request.getAttribute("sublist");
