@@ -67,18 +67,20 @@
                     <p class="text-center small">Enter your email & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="authentication" method="post" >
+                  <form class="row g-3 needs-validation" novalidate action="authentication"  id="myform" method="post" >
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
                       <input type="email" name="email" class="form-control" id="yourEmail" required>
+                      <span id="emailError" class="error"></span>
                       <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                      
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <span id="passwError" class="error"></span>
+
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -89,7 +91,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" value="LogIn" >Login</button>
+                      <button class="btn btn-primary w-100" type="submit" value="LogIn" onclick="validation()">Login</button>
                     </div>
                      <div class="col-12">
                       <p class="small mb-0">Don't Remember Password? <a href="forgetpassword">ForgotPassword</a></p>
@@ -115,18 +117,71 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script type="text/javascript">
+       
+
+
+        function validation() {
+        	
+        	isError = false ;
+            
+            
+            email = document.getElementById("yourEmail")
+            emailError = document.getElementById("emailError");
+            emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-]{2,3}$/;
+            
+            
+            passw = document.getElementById("yourPassword");
+            passwError = document.getElementById("passwError");
+            passwRegex=  /^[A-Za-z0-9]\w{7,14}$/;
+            
+           
+            
+            
+       
+            
+            /*this is validation for email  */
+            if (email.value == '') {
+                emailError.innerHTML = "Please Enter Email"
+                	isError = true ; 
+            }else {
+                    emailError.innerHTML = ""
+                }
+            
+             /*this is for password  */
+             if (passw.value == '') {
+                passwError.innerHTML = "Please Enter Password"
+                	isError = true ; 
+            } else {
+                if (passwRegex.test(passw.value) == false) {
+                    passwError.innerHTML = "Please Enter Strong Password"
+                    	isError = true ; 
+                } else {
+                    passwError.innerHTML = ""
+                }
+            }
+             
+             
+             if(isError == false){
+                 myform = document.getElementById("myform");
+                 myform.submit(); 
+            
+             }
+             
+        }//end function
+            </script> 
  
  
  <script src="assets/js/main.js"></script>
 
-	<link
+ 	<link
 		href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
 		rel="stylesheet" />
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
 		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 		crossorigin="anonymous"></script>
 	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+		src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
 
 	<script>
 		
@@ -136,6 +191,60 @@
 	<%}%>
 		 
 	</script>
+	 
+	 <!--  <script type="text/javascript">
+       
+
+
+        function validation() {
+        	
+        	isError = false ;
+            
+            
+            email = document.getElementById("yourEmail")
+            emailError = document.getElementById("emailError");
+            emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-]{2,3}$/;
+            
+            
+            passw = document.getElementById("yourPassword");
+            passwError = document.getElementById("passwError");
+            passwRegex=  /^[A-Za-z0-9]\w{7,14}$/;
+            
+           
+            
+            
+       
+            
+            /*this is validation for email  */
+            if (email.value == '') {
+                emailError.innerHTML = "Please Enter Email"
+                	isError = true ; 
+            }else {
+                    emailError.innerHTML = ""
+                }
+            
+             /*this is for password  */
+             if (passw.value == '') {
+                passwError.innerHTML = "Please Enter Password"
+                	isError = true ; 
+            } else {
+                if (passwRegex.test(passw.value) == false) {
+                    passwError.innerHTML = "Please Enter Strong Password"
+                    	isError = true ; 
+                } else {
+                    passwError.innerHTML = ""
+                }
+            }
+             
+             
+             if(isError == false){
+                 myform = document.getElementById("myform");
+                 myform.submit(); 
+            
+             }
+             
+        }//end function
+            </script> -->
  
 
 </body>

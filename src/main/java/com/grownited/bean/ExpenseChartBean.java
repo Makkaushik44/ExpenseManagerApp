@@ -4,6 +4,8 @@ public class ExpenseChartBean {
 
 	
 	String month;
+	String  categoryId;
+	String categoryName;
 	Long expenseAmount;
 
 	 
@@ -23,6 +25,24 @@ public class ExpenseChartBean {
 	public void setExpenseAmount(Long expenseAmount) {
 		this.expenseAmount = expenseAmount;
 	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	
 
 	
 }

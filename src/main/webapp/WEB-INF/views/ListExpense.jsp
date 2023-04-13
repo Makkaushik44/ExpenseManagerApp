@@ -9,6 +9,11 @@
 <jsp:include page="AllCss.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
 <title>listexpense</title>
+<style type="text/css">
+.button{
+color:green;
+}
+</style>
 </head>
 <body>
 
@@ -36,11 +41,7 @@
         <div class="col-lg-12">
         
           <!-- below for add buttton-->
-        <div class="iconslist"  align="right">
-        <a href="expense">
-          <i class="bi bi-plus-square-fill"></i>
-          </a> 
-        </div>
+       
        <!-- close the div add button -->
 
           <div class="card">
@@ -84,9 +85,16 @@
 	</tbody>
 
              </table>
-              <!-- End Default Table Example -->
+              <!-- End Default Table Example --><div align="right">
+              <a type="button" href="expense"   class="btn btn-success" >Add Expense</a>
+               <a type="button" href="home" class="btn btn-primary">Cancel</a>
               </div>
-            </div>
+              </div>
+              
+              
+              </div>
+           
+            
           </div>
 
         </div>

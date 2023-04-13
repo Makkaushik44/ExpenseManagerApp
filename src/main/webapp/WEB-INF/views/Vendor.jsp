@@ -10,6 +10,7 @@
 </head>
 <body>
 
+
 <jsp:include page="AdminSideBar.jsp"></jsp:include>
 
 <main id="main" class="main">
@@ -34,11 +35,13 @@
               <h5 class="card-title">Add Vendor </h5>
 
               <!-- General Form Elements -->
-              <form action="savevendor"  method="post" >
+              <form action="savevendor"  method="post" id="myform" >
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-3 col-form-label">VendorName</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" name="vendorName">
+                    <input type="text" class="form-control" name="vendorName" id="vendor">
+                     <span id="vendorError" class="error" style="color:red;"></span>
+                     
                   </div>
                 </div>
                 
@@ -46,7 +49,7 @@
                 <div class="row mb-3">
                   <label class="col-sm-3 col-form-label"></label>
                   <div class="col-sm-8">
-                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                    <button type="button" class="btn btn-primary" value="Vendor" onclick="validation()">Submit Form</button>
                   </div>
                 </div>
 
@@ -65,9 +68,49 @@
       </div>
     </section>
           <jsp:include page="AllJs.jsp"></jsp:include>
+          
+          
+          
 
   </main>
-
+   <script type="text/javascript">
+  function validation() {
+        	
+        	isError = false ;
+            
+            
+            vendor = document.getElementById("vendor")
+            vendorError = document.getElementById("vendorError");
+            
+            
+            
+           
+            
+           
+            
+            
+       
+            
+            /*this is validation for email  */
+            if (vendor.value == '') {
+                vendorError.innerHTML = "Please Enter VendorName"
+                	isError = true ; 
+            }else {
+                    vendorError.innerHTML = ""
+                }
+            
+             
+             
+             if(isError == false){
+                 myform = document.getElementById("myform");
+                 myform.submit(); 
+            
+             }
+             
+        }//end function
+            </script> 
+  
+</body>
 
 
 </html>

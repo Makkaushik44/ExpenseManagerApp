@@ -38,11 +38,14 @@ public class UserController {
 			}
 		Integer ExpenseUser=homeDao.getTotalExpenseForCurrentDateForUser(userId);
 		System.out.println(ExpenseUser);
-		/* Integer UserMonthExpense=homeDao.getTotalExpenseForCurrentMonth(userId); */
+		 Integer UserMonthExpense=homeDao.getTotalExpenseForCurrentMonth(userId); 
+		 Integer UserMonthIncome=homeDao.getTotalIncomeForCurrentMonth(userId); 
+		 
 		
 		
 		model.addAttribute("ExpenseUser", ExpenseUser);
-		/* model.addAttribute("UserMonthExpense", UserMonthExpense); */
+	    model.addAttribute("UserMonthExpense", UserMonthExpense); 
+		model.addAttribute("UserMonthIncome", UserMonthIncome); 
 		return "Home";
 	}
 

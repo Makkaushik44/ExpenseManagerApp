@@ -34,7 +34,7 @@
           
            <li>
             <a href="../listexpense">
-              <i class="bi bi-circle"></i><span>Expense List</span>
+              <i class="bi bi-cash"></i><span>Expense List</span>
             </a>
           </li>
            <li>
@@ -45,6 +45,27 @@
           
         </ul>
       </li><!-- End Tables Nav -->
+      
+      
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="expense">
+         <i class="ri-add-fill"></i><span>Add Expense</span><i ></i>
+        </a></li>
+        
+         <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="listexpense">
+         <i class="bi bi-hdd-stack-fill"></i><span>List Expense</span><i ></i>
+        </a></li>
+        
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="income">
+         <i class="ri-add-fill"></i><span>Add Income</span><i ></i>
+        </a></li>
+        
+         <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="listincome">
+         <i class="bi bi-hdd-stack-fill"></i><span>List Income</span><i ></i>
+        </a></li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -78,26 +99,17 @@
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
+     
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
+        <a class="nav-link collapsed" href="logout">
+          <i class="bi bi-box-arrow-in-left"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->
 
-      
-
-      
+  
 
     </ul>
 

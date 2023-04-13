@@ -1,3 +1,4 @@
+<%@page import="com.grownited.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +10,19 @@
 </head>
 <body>
 
-<jsp:include page="AdminSideBar.jsp"></jsp:include>
+<%
+		UserBean user = (UserBean)session.getAttribute("user");
+	%>
+	
+	<%
+	if(user.getRole() == 1)
+	{ %>
+		<jsp:include page="AdminSideBar.jsp"></jsp:include>	
+		<% }else { %>
+			<jsp:include page="UserSideBar.jsp"></jsp:include>
+	<% }%>
+
+
 
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>

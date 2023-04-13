@@ -25,7 +25,7 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <div class="row">
+      <div class="row"></div>
 
         <!-- Left side columns -->
         <div class="col-lg-12">
@@ -176,7 +176,7 @@
             
 
             <!-- Reports -->
-            <div class="col-9">
+            <div class="col-12">
               <div class="card">
 
                 
@@ -251,17 +251,78 @@
 
                   
                   <!-- End Line Chart -->
+                   
+          
+
+            </div>
+          </div>
+
+                 
 
                 </div>
 
-              </div>
+             
             </div><!-- End Reports -->
+        <%
+				List<ExpenseChartBean> pieChartData = (List<ExpenseChartBean>) request.getAttribute("pieChartData");
+				%>
+      <div class="col-12">              
+<div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bar Chart</h5>
 
-           
-
+              <!-- Bar Chart -->
+              <canvas id="barChart" style="max-height: 400px; display: block; box-sizing: border-box; height: 400px; width: 884px;" width="1106" height="500"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#barChart'), {
+                    type: 'pie',
+                    data: {
+                      labels: [<%for (ExpenseChartBean e : pieChartData) {%>
+						 '<%=e.getCategoryName()%>',
+							<%}%>],
+                      datasets: [{
+                        label: 'Bar Chart',
+                        data: [<%for (ExpenseChartBean e : pieChartData) {%>
+						<%=e.getExpenseAmount()%>,
+						<%}%>],
+                        backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                          'rgba(255, 205, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                          'rgb(255, 99, 132)',
+                          'rgb(255, 159, 64)',
+                          'rgb(255, 205, 86)',
+                          'rgb(75, 192, 192)',
+                          'rgb(54, 162, 235)',
+                          'rgb(153, 102, 255)',
+                          'rgb(201, 203, 207)'
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                });
+              </script>
+              <!-- End Bar CHart -->
+              </div>
+             
             
   
-          </div>
+          
         </div><!-- End Left side columns -->
         </div>
           </section>

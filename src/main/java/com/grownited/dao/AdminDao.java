@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.ExpenseChartBean;
 import com.grownited.bean.ProfileBean;
 import com.grownited.bean.UserBean;
@@ -95,12 +96,21 @@ public class AdminDao {
 
 	}
 	
+	//this is for admin side bar chart query
      public List<ExpenseChartBean> getExpenseStats() {
 		
 		String selectQ = "select monthname(date) as month , sum(amount) as expenseAmount from expense where year(Date) = 2023 group by monthname(date) ";
 		return stmt.query(selectQ, new BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class));
 
 	}
+     
+     public List<ExpenseChartBean> getCategoryStats() {
+ 		
+ 		String selectQ = "select c.categoryName  , sum(amount) as expenseAmount from expense e,category c where e.categoryId=c.categoryId  and year(Date) = 2023 group by categoryName ";
+ 		return stmt.query(selectQ, new BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class));
+
+ 	}
+     
      public void updateImageUrl(ProfileBean profileBean) {
     	 
  		stmt.update("update users set imageUrl = ? where userId = ?",profileBean.getImageUrl(),profileBean.getUserId());

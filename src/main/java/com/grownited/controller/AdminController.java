@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.bean.ExpenseChartBean;
 import com.grownited.bean.ProfileBean;
-import com.grownited.bean.StatusBean;
 import com.grownited.bean.UserBean;
 import com.grownited.dao.AdminDao;
 import com.grownited.dao.UserDao;
@@ -38,14 +37,17 @@ public class AdminController {
 		Integer TotalExpense=adminDao.getToatalExpense();
 		Integer TotalUser=adminDao.getTotalUserCountForCurrentYear();
 		Integer totalTransactionCount=adminDao.getTotalTransactionCountForCurrentDate();
+		
 		System.out.println(TodayExpense);
 		List<ExpenseChartBean> chartData=adminDao.getExpenseStats();
+		List<ExpenseChartBean> pieChartData=adminDao.getCategoryStats();
 		
 		model.addAttribute("TodayExpense", TodayExpense);
 		model.addAttribute("TotalExpense",TotalExpense);
 		model.addAttribute("TotalUser",TotalUser);
 		model.addAttribute("totalTransaction",totalTransactionCount);
 		model.addAttribute("chartData",chartData);
+		model.addAttribute("pieChartData",pieChartData);
 		return "AdminDashboard";
 	}
 	
