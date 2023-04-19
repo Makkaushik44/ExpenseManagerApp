@@ -1,10 +1,15 @@
 package com.grownited.dao;
 
 import java.util.Calendar;
+import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.grownited.bean.ExpenseChartBean;
 
 @Repository
 public class HomeDao {
@@ -75,7 +80,7 @@ public class HomeDao {
 			
 		  String   countQuery = "select sum(amount) from income where userId=? and date like ?";
 	  
-	  // dd-mm-yyyy
+	      //dd-mm-yyyy
 		  Calendar c = Calendar.getInstance();
 
 			int ddd = c.get(Calendar.DATE);
@@ -101,6 +106,12 @@ public class HomeDao {
 	 
 	 }
 	 
+	  public List<ExpenseChartBean> getCategoryStatsUser(Integer userId) {
+	 		
+	 		String selectQ = "select c.categoryName, sum(amount) as expenseAmount from expense e,category c where e.categoryId=c.categoryId  and  userId=? and year(Date) = 2023  group by categoryName ";
+	 		return stmt.query(selectQ, new BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class),new Object[] { userId});
+
+	 	}
 	
 
 }

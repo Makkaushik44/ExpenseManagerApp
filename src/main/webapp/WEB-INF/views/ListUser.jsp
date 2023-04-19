@@ -15,7 +15,7 @@
 <body>
 
 
-<jsp:include page="UserSideBar.jsp"></jsp:include>
+<jsp:include page="AdminSideBar.jsp"></jsp:include>
 
 
 <main id="main" class="main">

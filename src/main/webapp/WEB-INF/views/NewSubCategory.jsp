@@ -40,16 +40,14 @@
 
               <!-- General Form Elements -->
               <form action="savesubcategory" method="post">
-                <div class="row mb-6">
+                <div class="row mb-8">
                   <label for="inputText" class="col-sm-3 col-form-label">SubCategory Name</label>
                   <div class="col-sm-8">
                     <input type="text" class="form-control" name="SubcategoryName">
                   </div>
                 </div>
                 
-   
 
-                
 
                 <div class="row mb-3">
                   <label class="col-sm-3 col-form-label">CategoryName</label>
@@ -94,7 +92,11 @@
     </section>
 
   </main>
+  <jsp:include page="AllJs.jsp"></jsp:include>
     
+
+</body>
+</html>
 <%-- 	<%
 		List<CategoryBean> list = (List<CategoryBean>) request.getAttribute("list");
 
@@ -118,5 +120,3 @@
 		
 		<input type="submit" value="save SubCategory"/>
 	</form> --%>
-</body>
-</html>

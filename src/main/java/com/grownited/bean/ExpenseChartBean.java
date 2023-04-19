@@ -4,6 +4,7 @@ public class ExpenseChartBean {
 
 	
 	String month;
+    Integer userId;
 	String  categoryId;
 	String categoryName;
 	Long expenseAmount;
@@ -42,6 +43,14 @@ public class ExpenseChartBean {
 		this.categoryName = categoryName;
 	}
 
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+    
 	
 
 	

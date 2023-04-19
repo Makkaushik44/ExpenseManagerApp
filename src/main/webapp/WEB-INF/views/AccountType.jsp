@@ -25,7 +25,7 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
+    <section class="section"> 
       <div class="row">
         <div class="col-lg-6">
 
@@ -34,11 +34,12 @@
               <h5 class="card-title">Add category </h5>
 
               <!-- General Form Elements -->
-              <form action="saveaccounttype"  method="post" >
+              <form action="saveaccounttype"  method="post" id="myform" >
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-4 col-form-label">AccountTypeName</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" name="AccountTypeName">
+                    <input type="text" class="form-control" name="AccountTypeName" id="accounttype">
+                    <span id="accounttypeError" class="error" style="color:red;"></span>
                   </div>
                 </div>
                 
@@ -46,7 +47,7 @@
                 <div class="row mb-3">
                   <label class="col-sm-4 col-form-label"></label>
                   <div class="col-sm-8">
-                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                    <button type="button" class="btn btn-primary" value="accounttype" onclick="validation()">Submit Form</button>
                   </div>
                 </div>
 
@@ -66,9 +67,38 @@
     </section>
 
   </main>
+            <jsp:include page="AllJs.jsp"></jsp:include>
+  
+    <script type="text/javascript">
+  function validation() {
+        	
+        	isError = false ;
+            
+            
+        	accounttype = document.getElementById("accounttype")
+            accounttypeError = document.getElementById("accounttypeError");
+            
+           
+            /*this is validation for email  */
+            if (accounttype.value == '') {
+                accounttypeError.innerHTML = "Please Enter AccountTypeName"
+                	isError = true ; 
+            }else {
+            	accounttypeError.innerHTML = ""
+                }
+            
+             
+             
+             if(isError == false){
+                 myform = document.getElementById("myform");
+                 myform.submit(); 
+            
+             }
+             
+        }//end function
+            </script>
 
-
-
+</body>
 </html>
 
 <!-- <html>

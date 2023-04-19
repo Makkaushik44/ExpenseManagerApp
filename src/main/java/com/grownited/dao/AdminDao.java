@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.ExpenseChartBean;
 import com.grownited.bean.ProfileBean;
 import com.grownited.bean.UserBean;
@@ -49,8 +48,31 @@ public class AdminDao {
 	public Integer getToatalExpense() {
 		
 		
+		 String   countQuery = "select sum(amount) from expense where  date like ?";
+		  
+		  // dd-mm-yyyy
+			  Calendar c = Calendar.getInstance();
+
+				int ddd = c.get(Calendar.DATE);
+				int mmm = c.get(Calendar.MONTH) + 1;
+				int yyy = c.get(Calendar.YEAR);
+
+		  String  date="";
 		
-		return 2000;
+		
+		if (mmm<10) {
+				date = yyy + "-0" + mmm + "-%" ;
+			} else {
+				date= yyy + "-" + mmm + "-%" ;
+			}
+		  Integer sumExpenseMonth=0;
+		 
+		 
+		  System.out.println("CURRENT MONTH => " + date);
+		  
+		  sumExpenseMonth=stmt.queryForObject(countQuery, Integer.class, new Object[] {date});
+		  
+		  return sumExpenseMonth;
 	}
 
 	public Integer getTotalUserCountForCurrentYear() {
@@ -104,6 +126,7 @@ public class AdminDao {
 
 	}
      
+     //THIS IS FOR PIE CHART IN ADMIN SIDES
      public List<ExpenseChartBean> getCategoryStats() {
  		
  		String selectQ = "select c.categoryName  , sum(amount) as expenseAmount from expense e,category c where e.categoryId=c.categoryId  and year(Date) = 2023 group by categoryName ";
@@ -127,4 +150,7 @@ public class AdminDao {
  		
  		return userList;
  	}
+     
+     
+     
 }

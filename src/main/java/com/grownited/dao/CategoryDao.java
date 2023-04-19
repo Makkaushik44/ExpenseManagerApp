@@ -37,6 +37,20 @@ public class CategoryDao {
 		return list;
 	}
 	
+	
+	public List<CategoryBean> getAllActiveCategory() {
+
+		String selectQuery = "select * from category where deleted=false";//where deleted = false
+
+		List<CategoryBean> list =  stmt.query(selectQuery, new BeanPropertyRowMapper<CategoryBean>(CategoryBean.class));
+		
+		//c1 c2 c3 
+		
+		return list;
+	}
+	
+	
+	
 	public void deleteCategory(Integer categroyId,boolean currentStatus) {
 		currentStatus =!currentStatus;
 		String updateQuery ="update category set deleted=? where categoryId= ? ";

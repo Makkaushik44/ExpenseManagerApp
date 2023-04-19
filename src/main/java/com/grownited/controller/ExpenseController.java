@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.grownited.bean.AccountTypeBean;
 import com.grownited.bean.CategoryBean;
@@ -132,5 +133,41 @@ public class ExpenseController {
 		model.addAttribute("expenselist",expenselist);
 		return "ListExpense";
 	}
-
+     
+	
+	
+	 @GetMapping("/editexpense")
+	 public String editExpense(@RequestParam("expenseId") Integer expenseId,Model model) {
+		 
+		 List<CategoryBean> list = categoryDao.getAllCategory();
+		 model.addAttribute("list", list);
+		 
+		 List<SubCategoryBean> sublist = subCategoryDao.getAllCategory();
+		 model.addAttribute("sublist", sublist);
+		 
+		 List<StatusBean> statusList =statusDao.getAllStatus();
+		 model.addAttribute("statusList", statusList);
+		 
+		 List<AccountTypeBean> aclist = accountyTypeDao.getAllAccountType();
+		 model.addAttribute("aclist",aclist);
+		 
+		 List<VendorBean> vendorlist =vendorDao.getAllVendor();
+		 model.addAttribute("vendorlist",vendorlist);
+		 
+	 ExpenseBean expenseBean = expenseDao.getExpenseById(expenseId);//12
+	  model.addAttribute("expenseBean", expenseBean); 
+	  
+	  return "EditExpense";
+	  }
+	 @PostMapping("/updateexpense")
+		public String updateExpense(ExpenseBean expenseBean) {
+			expenseDao.updateExpense(expenseBean);
+			System.out.println(expenseBean.getCategoryName());	// categoryName;
+	 		System.out.println(expenseBean.getAmount());
+	     
+			return "redirect:/listexpense";
+		}
+	 
+	
+	
 }

@@ -23,7 +23,7 @@
 		<h1>Sub Category</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+				<li class="breadcrumb-item"><a href="..admindashboard">Home</a></li>
 				<li class="breadcrumb-item">SubCategory</li>
 				<li class="breadcrumb-item active">Edit</li>
 			</ol>
@@ -46,7 +46,7 @@
 						%>
 
 						<form action="updatesubcategory" method="post">
-							<input type="hidden" name="subcategoryId" value="<%=subCategoryBean.getSubcategoryId() %>"/>
+							 <input type="hidden" name="subcategoryId" value="<%=subCategoryBean.getSubcategoryId() %>"/>
 
 							<div class="row mb-3">
 								<label for="inputText" class="col-sm-2 col-form-label">SubCategoryName</label>

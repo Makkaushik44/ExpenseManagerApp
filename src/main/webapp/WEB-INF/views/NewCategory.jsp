@@ -65,6 +65,8 @@
     </section>
 
   </main>
+  <jsp:include page="AllJs.jsp"></jsp:include>
+    </body>
 
 
  <!-- <form action="savecategory" method="post">

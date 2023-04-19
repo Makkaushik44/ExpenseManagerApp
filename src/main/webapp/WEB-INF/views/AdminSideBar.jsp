@@ -30,6 +30,14 @@
          <i class="bi bi-menu-button-wide"></i><span>Manage Data</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        
+        
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="expense">
+         <i class="ri-add-fill"></i><span>Add Expense</span><i ></i>
+        </a></li>
+        
+        
           <li>
             <a href="../listcategories">
               <i class="bi bi-circle"></i><span>Category List</span>
@@ -68,17 +76,23 @@
           
         </ul>
       </li><!-- End Tables Nav -->
+      
+      
+      
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        
           <li>
             <a href="charts-chartjs.html">
               <i class="bi bi-circle"></i><span>Chart.js</span>
             </a>
           </li>
+          
           <li>
             <a href="charts-apexcharts.html">
               <i class="bi bi-circle"></i><span>ApexCharts</span>
@@ -103,12 +117,7 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
+      
 
 
       <li class="nav-item">

@@ -6,7 +6,7 @@
 <head>
 <jsp:include page="AllCss.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
-<title>NewCategory</title>
+<title>Status</title>
 </head>
 <body>
 
@@ -15,12 +15,12 @@
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>Category Form</h1>
+      <h1>Status Form</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
           <li class="breadcrumb-item">ManageData</li>
-          <li class="breadcrumb-item active">CategoryForm</li>
+          <li class="breadcrumb-item active">StatusForm</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -31,14 +31,15 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Add category </h5>
+              <h5 class="card-title">Add Status</h5>
 
               <!-- General Form Elements -->
               <form action="savestatus"  method="post" >
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-3 col-form-label">StatusName</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" name="StatusName">
+                    <input type="text" class="form-control" name="StatusName" id="status">
+                     <span id="statusError" class="error" style="color:red;"></span>
                   </div>
                 </div>
                 
@@ -46,7 +47,7 @@
                 <div class="row mb-3">
                   <label class="col-sm-3 col-form-label"></label>
                   <div class="col-sm-8">
-                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                    <button type="button" class="btn btn-primary" value="Status" onclick="validation()">Submit Form</button>
                   </div>
                 </div>
 
@@ -66,9 +67,38 @@
     </section>
 
   </main>
+  <jsp:include page="AllJs.jsp"></jsp:include>
+  
+   <script type="text/javascript">
+  function validation() {
+        	
+        	isError = false ;
+            
+            
+        	vendor = document.getElementById("status")
+            vendorError = document.getElementById("statusError");
+            
+            
+            
+       
+            
+            /*this is validation for email  */
+            if (vendor.value == '') {
+            	vendorError.innerHTML = "Please Enter StatusName"
+                	isError = true ; 
+            }else {
+            	vendorError.innerHTML = ""
+                }
+            
+             
+             
+            
+             
+        }//end function
+            </script>
 
 
-
+</body>
 </html>
 
 <!-- <html>

@@ -34,13 +34,7 @@
       <div class="col-lg-1"></div>
         <div class="col-lg-12">
         
-          <!-- below for add buttton-->
-        <div class="iconslist" align="right">
-        <a href="newsubcategory">
-          <i class="bi bi-plus-square-fill"></i>
-          </a> 
-        </div>
-       <!-- close the div add button -->
+          
 
           <div class="card">
             <div class="card-body">
@@ -79,6 +73,10 @@
 </tbody>
              </table>
               <!-- End Default Table Example -->
+               <div align="right">
+              <a type="button" href="newsubcategory"   class="btn btn-success" >Add NewSubCategory</a>
+               <a type="button" href="admindashboard" class="btn btn-primary">Back</a>
+              </div>
               </div>
             </div>
           </div>

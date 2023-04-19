@@ -23,7 +23,7 @@
       <h1>General Tables</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="admindashboard">AdminDashboard</a></li>
+          <li class="breadcrumb-item"><a href="../admindashboard">AdminDashboard</a></li>
           <li class="breadcrumb-item">Tables</li>
           <li class="breadcrumb-item active">General</li>
         </ol>
@@ -35,14 +35,7 @@
       <div class="col-lg-1"></div>
         <div class="col-lg-8">
         
-          <!-- below for add buttton-->
-        <div class="iconslist" align="right">
-        <a href="accounttype">
-          <i class="bi bi-plus-square-fill"></i>
-          </a> 
-        </div>
-       <!-- close the div add button -->
-
+         
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Default Table</h5>
@@ -72,6 +65,10 @@
 
              </table>
               <!-- End Default Table Example -->
+              <div align="right">
+              <a type="button" href="accounttype"   class="btn btn-success" >Add AccountType</a>
+               <a type="button" href="admindashboard" class="btn btn-primary">Back</a>
+              </div>
             </div>
           </div>
 

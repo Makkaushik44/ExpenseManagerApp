@@ -28,7 +28,7 @@ public class SubCategoryController {
      @GetMapping("/newsubcategory")
      public String newSubCategory(Model model) {
     	 
-    	 model.addAttribute("list", categoryDao.getAllCategory());
+    	 model.addAttribute("list", categoryDao.getAllActiveCategory());
     	 return "/NewSubCategory";
      }
      
@@ -81,8 +81,10 @@ public class SubCategoryController {
 	@PostMapping("/updatesubcategory")
 	public String updateSubCategory(SubCategoryBean subCategoryBean) {
 		subCategoryDao.updateSubCategory(subCategoryBean);
-		System.out.println(subCategoryBean.getSubcategoryName());	// categoryName;
- 		System.out.println(subCategoryBean.getCategoryId());
+		System.out.println("this is controller");
+		System.out.println(subCategoryBean.getSubcategoryName());
+		System.out.println(subCategoryBean.getCategoryId());// categoryName;
+ 		System.out.println(subCategoryBean.getCategoryName());
      
 		return "redirect:/sublistcategories";
 	}

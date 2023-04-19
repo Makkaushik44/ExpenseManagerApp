@@ -33,15 +33,9 @@
     <section class="section">
       <div class="row">
       <div class="col-lg-0"></div>
-        <div class="col-lg-10">
+        <div class="col-lg-12">
         
-          <!-- below for add buttton-->
-        <div class="iconslist"  align="right">
-        <a href="income">
-          <i class="bi bi-plus-square-fill"></i>
-          </a> 
-        </div>
-       <!-- close the div add button -->
+         
 
           <div class="card">
             <div class="card-body">
@@ -81,6 +75,14 @@
 
              </table>
               <!-- End Default Table Example -->
+               <!-- this is button  -->
+              <div align="right">
+              
+              <a type="button" href="income"   class="btn btn-success" >Add Income</a>
+               <a type="button" href="home" class="btn btn-primary">Cancel</a>
+              </div>
+             
+              
               </div>
             </div>
           </div>

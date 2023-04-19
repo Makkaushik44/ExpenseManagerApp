@@ -95,7 +95,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="myprofile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -105,7 +105,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="logout">
           <i class="bi bi-box-arrow-in-left"></i>
-          <span>Login</span>
+          <span>Log Out</span>
         </a>
       </li><!-- End Login Page Nav -->
 

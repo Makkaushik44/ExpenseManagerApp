@@ -10,6 +10,7 @@
 <meta charset="ISO-8859-1">
 <title>listexpense</title>
 <style type="text/css">
+
 .button{
 color:green;
 }
@@ -49,7 +50,7 @@ color:green;
               <h5 class="card-title">Expense List</h5>
                 <div class="datatable-container">
               <!-- Default Table -->
-              <table class="table datatable" id="incomelist">
+              <table class="table datatable" id="expenselist">
 <%
 	List<ExpenseBean> expenselist =  (List<ExpenseBean>)request.getAttribute("expenselist");
  %> <thead>
@@ -62,7 +63,7 @@ color:green;
 		<th>StatusName</th>
 		<th>amount</th>
 		<th>Date</th>
-		<th>description</th>
+		<th>Action</th>
 		
 </tr>
 </thead>
@@ -77,7 +78,7 @@ color:green;
 		<td> <%=eb.getStatusName()%> </td>
 		<td> <%=eb.getAmount()%> </td>
 		<td> <%=eb.getDate()%> </td>
-		<td> <%=eb.getDescription()%> </td>
+		<td><a href="editexpense?expenseId=<%=eb.getExpenseId()%>"> <%=eb.getExpenseId() %><i class="bi bi-pencil"></i>   </a></td>
 			
 		
 	</tr>
@@ -85,7 +86,10 @@ color:green;
 	</tbody>
 
              </table>
-              <!-- End Default Table Example --><div align="right">
+              <!-- End Default Table Example -->
+              
+              <!-- this is button  -->
+              <div align="right">
               <a type="button" href="expense"   class="btn btn-success" >Add Expense</a>
                <a type="button" href="home" class="btn btn-primary">Cancel</a>
               </div>

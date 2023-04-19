@@ -66,9 +66,9 @@ public class SubCategoryDao {
 	// update
 	public void updateSubCategory(SubCategoryBean subCategoryBean) {
 		System.out.println("hey this is update subcategory");
-		stmt.update("update subCategory set subCategoryName = ? , categoryId = ? where subCategoryId = ? ",subCategoryBean.getSubcategoryName(), subCategoryBean.getCategoryId(), subCategoryBean.getSubcategoryId());
+		stmt.update("update subCategory set subCategoryName = ?, categoryId = ? where subCategoryId = ? ",subCategoryBean.getSubcategoryName(),subCategoryBean.getCategoryId(), subCategoryBean.getSubcategoryId());
 		
-		
+		System.out.println(subCategoryBean.getCategoryName());
 	}
 	
 

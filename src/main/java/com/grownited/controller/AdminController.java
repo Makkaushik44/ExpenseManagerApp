@@ -75,6 +75,7 @@ public class AdminController {
 		} catch (Exception e) {
 
 		}
+		
 		return "redirect:/myprofile";
 	}
 	
