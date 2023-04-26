@@ -4,14 +4,17 @@ import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.ExpenseChartBean;
+import com.grownited.bean.UserBean;
 import com.grownited.dao.HomeDao;
 import com.grownited.dao.UserDao;
 
@@ -58,5 +61,20 @@ public class UserController {
 		return "Home";
 	}
 	
+	
+	 @PostMapping("/updateprofile")
+		public String updateExpense(UserBean userBean,HttpSession session) {
+		 UserBean user = (UserBean)session.getAttribute("user");
+		 user.setFirstName(userBean.getFirstName());
+		 session.setAttribute("user", user);
+		 
+		 userDao.updateProfile(userBean);
+			
+			
+			System.out.println(userBean.getFirstName());	// categoryName;
+	 		
+	     
+			return "redirect:/myprofile";
+		}
 
 }

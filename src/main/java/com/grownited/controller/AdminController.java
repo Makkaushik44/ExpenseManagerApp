@@ -59,6 +59,7 @@ public class AdminController {
 	@PostMapping("/saveprofilepic")
 	public String saveProfilePic(ProfileBean profileBean) {
 		System.out.println(profileBean.getUserId());
+		System.out.println(profileBean.getFirstName());
 		System.out.println(profileBean.getProfileImg().getOriginalFilename());
 		try {
 			File userDir = new File("C:\\STS\\ExpenseManager\\src\\main\\resources\\static\\assets\\profile",profileBean.getUserId() + "");
@@ -73,7 +74,7 @@ public class AdminController {
 			adminDao.updateImageUrl(profileBean);
 
 		} catch (Exception e) {
-
+         e.printStackTrace();
 		}
 		
 		return "redirect:/myprofile";

@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
+import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.ForgetPasswordBean;
 import com.grownited.bean.LoginBean;
 import com.grownited.bean.UpdatePasswordBean;
@@ -104,6 +104,13 @@ public class UserDao {
 			System.out.println("SMW --> UserDao:: getuserbyemail");
 		}
 		return null;
+	}
+	
+	public void updateProfile(UserBean userBean) {
+		System.out.println("hey this is update profile");
+		stmt.update("update users set firstName = ?",userBean.getFirstName());
+		System.out.println("dao");
+		System.out.println(userBean.getFirstName());
 	}
 	
 	

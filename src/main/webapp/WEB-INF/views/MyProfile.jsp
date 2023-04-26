@@ -70,6 +70,10 @@
                 </li>
 
                 <li class="nav-item" role="presentation">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit-image" aria-selected="false" tabindex="-1" role="tab">Edit Image Profile</button>
+                </li>
+                
+                 <li class="nav-item" role="presentation">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit" aria-selected="false" tabindex="-1" role="tab">Edit Profile</button>
                 </li>
 
@@ -127,10 +131,10 @@
 
                 </div>
 
-                <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit-image" role="tabpanel">
 
 
-                  <!-- Profile Edit Form -->
+                  <!-- Profile image Edit Form -->
                   <form action="saveprofilepic" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -143,7 +147,7 @@
                       <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Profile Pic</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="profileImg" type="file" class="form-control" id="fullName" value="Kevin Anderson">
+                        <input name="profileImg" type="file" class="form-control" >
                       </div>
                     </div>
 
@@ -153,7 +157,7 @@
                  <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="${user.firstName}">
+                        <input name="firstName" type="text" class="form-control" id="fullName" value="${user.firstName}">
                       </div>
                     </div>
 
@@ -237,7 +241,37 @@
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
+                    
                   </form><!-- End Profile Edit Form -->
+                   </div>
+                   
+                  
+                   <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
+                   
+                  <!-- Edit profile section-->
+                  <form action="updateprofile" method="post" >
+                 
+                      
+
+                    <input type="hidden" name="userId" value="${user.userId}">
+                    
+
+                 <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="firstName" type="text" class="form-control" id="fullName" value="${user.firstName}">
+                      </div>
+                    </div>
+                    
+                   <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                    
+                  </form><!-- End Profile Edit Form -->
+                  
+                  </div>
+                  
+                  
 
                 </div>
 

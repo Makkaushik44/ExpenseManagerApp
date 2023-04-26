@@ -49,6 +49,7 @@
 	<tr>
 		<th>AccountTypeId</th>
 		<th>AccountTypeName</th>
+		<th>Action</th>
 
 </tr>
 </thead>
@@ -57,6 +58,7 @@
 	<tr>
 		<td> <%=atb.getAccountTypeId()%> </td>
 		<td> <%=atb.getAccountTypeName()%> </td>
+		<td><a href="deleteaccounttype/<%=atb.getAccountTypeId()%>">Delete</a></td>
 		
 		
 	</tr>

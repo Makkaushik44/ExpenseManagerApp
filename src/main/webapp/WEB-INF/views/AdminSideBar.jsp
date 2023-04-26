@@ -32,6 +32,8 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         
         
+        
+        
         <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="expense">
          <i class="ri-add-fill"></i><span>Add Expense</span><i ></i>

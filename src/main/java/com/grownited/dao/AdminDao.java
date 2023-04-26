@@ -136,7 +136,8 @@ public class AdminDao {
      
      public void updateImageUrl(ProfileBean profileBean) {
     	 
- 		stmt.update("update users set imageUrl = ? where userId = ?",profileBean.getImageUrl(),profileBean.getUserId());
+ 		stmt.update("update users set imageUrl = ?,firstName=? where userId = ?",profileBean.getImageUrl(),profileBean.getFirstName(),profileBean.getUserId());
+ 		System.out.println(profileBean.getFirstName());
  	}
      
      //User List

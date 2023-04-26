@@ -78,7 +78,9 @@ color:green;
 		<td> <%=eb.getStatusName()%> </td>
 		<td> <%=eb.getAmount()%> </td>
 		<td> <%=eb.getDate()%> </td>
-		<td><a href="editexpense?expenseId=<%=eb.getExpenseId()%>"> <%=eb.getExpenseId() %><i class="bi bi-pencil"></i>   </a></td>
+		<td>
+		<a href="viewexpense/<%=eb.getExpenseId()%>"><i class="bi bi-eye"></i></a>|
+		<a href="editexpense?expenseId=<%=eb.getExpenseId()%>"> <%=eb.getExpenseId() %><i class="bi bi-pencil"></i>   </a></td>
 			
 		
 	</tr>

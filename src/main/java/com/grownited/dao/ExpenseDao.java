@@ -53,8 +53,8 @@ public class ExpenseDao {
 	  public ExpenseBean getExpenseById(Integer expenseId) {
 		  ExpenseBean expenseBean = null;
 	  
-	  try { expenseBean =
-	  stmt.queryForObject("select * from expense where expenseId = ?", new
+	  try {
+		  expenseBean =stmt.queryForObject("select * from expense,category,subcategory,vendor,accountType,status where expense.expenseId = ? and category.categoryId=expense.categoryId and subCategory.subCategoryId=expense.subCategoryId and vendor.vendorId=expense.vendorId  and accountType.accountTypeId=expense.accountTypeId and status.statusId=expense.statusId", new
 	  BeanPropertyRowMapper<ExpenseBean>(ExpenseBean.class), new Object[] {
 	  expenseId }); } catch (Exception e) {
 	  System.out.println("CategoryDao :: getExpenseId()");

@@ -50,6 +50,7 @@
 	<tr>
 		<th>StatusId</th>
 		<th>StatusName</th>
+		<th>Action</th>
 
 </tr>
 </thead>
@@ -58,6 +59,7 @@
 	<tr>
 		<td> <%=sb.getStatusId()%> </td>
 		<td> <%=sb.getStatusName()%> </td>
+		<td><a href="deletestatus/<%=sb.getStatusId()%>">Delete</a></td>
 		
 		
 	</tr>

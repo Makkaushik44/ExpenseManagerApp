@@ -47,7 +47,7 @@
                 <div class="row mb-3">
                   <label class="col-sm-4 col-form-label"></label>
                   <div class="col-sm-8">
-                    <button type="button" class="btn btn-primary" value="accounttype" onclick="validation()">Submit Form</button>
+                    <button type="button" class="btn btn-primary" class="ld_sf_submit" value="accounttype" onclick="validation()">Submit</button>
                   </div>
                 </div>
 

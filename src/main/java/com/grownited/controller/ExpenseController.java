@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -139,7 +140,7 @@ public class ExpenseController {
 	 @GetMapping("/editexpense")
 	 public String editExpense(@RequestParam("expenseId") Integer expenseId,Model model) {
 		 
-		 List<CategoryBean> list = categoryDao.getAllCategory();
+		 List<CategoryBean> list = categoryDao.getAllActiveCategory();
 		 model.addAttribute("list", list);
 		 
 		 List<SubCategoryBean> sublist = subCategoryDao.getAllCategory();
@@ -167,6 +168,17 @@ public class ExpenseController {
 	     
 			return "redirect:/listexpense";
 		}
+	 
+	 @GetMapping("viewexpense/{expenseId}")
+		public String viewExpense(@PathVariable("expenseId") Integer expenseId, Model model) {
+			ExpenseBean expenseBean = expenseDao.getExpenseById(expenseId);
+			model.addAttribute("expenseBean",expenseBean);
+			System.out.println("hey this is view");
+			System.out.println(expenseBean.getCategoryName());
+			return "ViewExpense";
+		}
+	 
+	
 	 
 	
 	

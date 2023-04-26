@@ -4,6 +4,8 @@ public class StatusBean {
 
 	 private Integer statusId;
 	 private String statusName;
+	 private Boolean deleted;
+	 
 	public Integer getStatusId() {
 		return statusId;
 	}
@@ -16,6 +18,14 @@ public class StatusBean {
 	public void setStatusName(String statusName) {
 		this.statusName = statusName;
 	}
+	public Boolean getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
+	
+	
 	 
 	 
 }

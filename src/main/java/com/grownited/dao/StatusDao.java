@@ -18,14 +18,14 @@ public class StatusDao {
 	
   public void insertStatus(StatusBean statusBean) {
 	  
-	  String insertQuery = "insert into status (statusName) values (?)";
+	  String insertQuery = "insert into status (statusName,deleted) values (?,?)";
 	  
-	  stmt.update(insertQuery, statusBean.getStatusName());
+	  stmt.update(insertQuery, statusBean.getStatusName(),false);
   }
   
   public List<StatusBean> getAllStatus() {
 
-		String selectQuery = "select * from status ";
+		String selectQuery = "select * from status where deleted=false ";
 
 		List<StatusBean> statusList =  stmt.query(selectQuery, new BeanPropertyRowMapper<StatusBean>(StatusBean.class));
 		
@@ -33,5 +33,11 @@ public class StatusDao {
 		
 		return statusList;
 	}
-
+  
+	
+      public void deleteStatus(Integer statusId) {
+		String updateQuery ="update status set deleted=true where statusId= ? ";
+		stmt.update(updateQuery,statusId);
+	}
+  
 }

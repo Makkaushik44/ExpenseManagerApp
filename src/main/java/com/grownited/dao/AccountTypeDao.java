@@ -19,20 +19,25 @@ public class AccountTypeDao {
 
 	public void insertAccountType(AccountTypeBean accountTypeBean) {
 		
-		String insertQuery ="insert into accounttype (accountTypeName) values (?)";
+		String insertQuery ="insert into accounttype (accountTypeName,deleted) values (?,?)";
 		
-		stmt.update(insertQuery,accountTypeBean.getAccountTypeName());
+		stmt.update(insertQuery,accountTypeBean.getAccountTypeName(),false);
 		
 	}
 	public List<AccountTypeBean> getAllAccountType() {
 
-		String selectQuery = "select * from accounttype ";
+		String selectQuery = "select * from accounttype where deleted=false ";
 
 		List<AccountTypeBean> aclist =  stmt.query(selectQuery, new BeanPropertyRowMapper<AccountTypeBean>(AccountTypeBean.class));
 		
 		//c1 c2 c3 
 		
 		return aclist;
+	}
+	
+	public void deleteAccountType(Integer accountTypeId) {
+		String updateQuery ="update accountType set deleted=true where accountTypeId= ? ";
+		stmt.update(updateQuery,accountTypeId);
 	}
 
 }

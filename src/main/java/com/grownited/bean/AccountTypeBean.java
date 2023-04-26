@@ -3,6 +3,7 @@ package com.grownited.bean;
 public class AccountTypeBean {
    private Integer accountTypeId;
    private String accountTypeName;
+   private Boolean deleted;
 public Integer getAccountTypeId() {
 	return accountTypeId;
 }
@@ -15,6 +16,13 @@ public String getAccountTypeName() {
 public void setAccountTypeName(String accountTypeName) {
 	this.accountTypeName = accountTypeName;
 }
+public Boolean getDeleted() {
+	return deleted;
+}
+public void setDeleted(Boolean deleted) {
+	this.deleted = deleted;
+}
+
    
    
 }

@@ -34,7 +34,7 @@
               <h5 class="card-title">Add Status</h5>
 
               <!-- General Form Elements -->
-              <form action="savestatus"  method="post" >
+              <form action="savestatus"  method="post" id="myform">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-3 col-form-label">StatusName</label>
                   <div class="col-sm-8">
@@ -91,7 +91,11 @@
                 }
             
              
-             
+            if(isError == false){
+                myform = document.getElementById("myform");
+                myform.submit(); 
+           
+            }
             
              
         }//end function

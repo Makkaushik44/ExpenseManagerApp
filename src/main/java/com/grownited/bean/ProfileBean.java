@@ -7,6 +7,7 @@ public class ProfileBean {
 	Integer userId; 
 	MultipartFile profileImg;
 	String imageUrl;
+	private	String firstName;
 	public Integer getUserId() {
 		return userId;
 	}
@@ -25,6 +26,13 @@ public class ProfileBean {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
 	
 	
 }
