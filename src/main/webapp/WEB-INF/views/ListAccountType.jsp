@@ -20,12 +20,12 @@
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
     
-      <h1>General Tables</h1>
+      <h1>AccountType Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admindashboard">AdminDashboard</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Manage</li>
+          <li class="breadcrumb-item active">AccountType</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -38,7 +38,7 @@
          
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">List AccountType</h5>
                <div class="dattable-container"></div>
               <!-- Default Table -->
               <table class="table datatable">

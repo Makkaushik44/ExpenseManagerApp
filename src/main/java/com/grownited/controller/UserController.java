@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.bean.ExpenseBean;
 import com.grownited.bean.ExpenseChartBean;
+import com.grownited.bean.UpdatePasswordBean;
 import com.grownited.bean.UserBean;
 import com.grownited.dao.HomeDao;
 import com.grownited.dao.UserDao;
@@ -52,20 +53,28 @@ public class UserController {
 		 Integer UserMonthExpense=homeDao.getTotalExpenseForCurrentMonth(userId); 
 		 Integer UserMonthIncome=homeDao.getTotalIncomeForCurrentMonth(userId); 
 		 List<ExpenseChartBean> pieChartDataUser=homeDao.getCategoryStatsUser (userId);
-		
+			/*
+			 * List<ExpenseChartBean> average=homeDao.getMonthWiseAverage(userId) ;
+			 */
 		
 		model.addAttribute("ExpenseUser", ExpenseUser);
 	    model.addAttribute("UserMonthExpense", UserMonthExpense); 
 		model.addAttribute("UserMonthIncome", UserMonthIncome); 
 		model.addAttribute("pieChartDataUser", pieChartDataUser); 
+		/* model.addAttribute("average", average); */
 		return "Home";
 	}
 	
 	
 	 @PostMapping("/updateprofile")
 		public String updateExpense(UserBean userBean,HttpSession session) {
+		 
 		 UserBean user = (UserBean)session.getAttribute("user");
 		 user.setFirstName(userBean.getFirstName());
+		 user.setLastName(userBean.getLastName());
+		 user.setEmail(userBean.getEmail());
+		 user.setDOB(userBean.getDOB());
+		 
 		 session.setAttribute("user", user);
 		 
 		 userDao.updateProfile(userBean);
@@ -76,5 +85,24 @@ public class UserController {
 	     
 			return "redirect:/myprofile";
 		}
+	 
+		/*
+		 * //this updateamnual password
+		 * 
+		 * @PostMapping("/updatemypasswordmanual") public String
+		 * updateMyPaswordManual(UpdatePasswordBean upBean, Model model,Integer userId )
+		 * {
+		 * 
+		 * System.out.println(upBean.getPassword());
+		 * 
+		 * 
+		 * //email otp password confirmpassword - nt blank //password - confirmpassword
+		 * // otp == dbOtp //otp=db check UserBean
+		 * user=userDao.getVerifyPassword(upBean, userId); if(user==null) {
+		 * model.addAttribute("error","Invalid Otp or Email"); return "MyProfile";
+		 * 
+		 * }else { userDao.updateMyPasswordManual(upBean, userId); return "Login"; } }
+		 */
+		
 
 }

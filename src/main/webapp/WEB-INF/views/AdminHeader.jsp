@@ -11,7 +11,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="../admindashboard" class="logo d-flex align-items-center">
-        <img src="assets/img/logo-2.png" alt="">
+        <img src="assets/img/logo-3.png" alt="">
         <span class="d-none d-lg-block">ExpenseManager</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -46,7 +46,7 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" style="">
             <li class="dropdown-header">
               <h6> ${user.firstName}</h6>
-              <span>Web Designer</span>
+              <span>${user.role==1?"Admin":"Customer"}</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -61,13 +61,13 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
+<!-- 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
-            </li>
+            </li> -->
             
             
             

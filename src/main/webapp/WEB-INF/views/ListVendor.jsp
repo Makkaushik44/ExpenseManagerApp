@@ -20,7 +20,7 @@
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
     
-      <h1>General Tables</h1>
+      <h1>Vendor Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">AdminDashboard</a></li>
@@ -39,7 +39,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">List Vendor</h5>
 
  <div class="datatable-container">div
               <!-- Default Table -->

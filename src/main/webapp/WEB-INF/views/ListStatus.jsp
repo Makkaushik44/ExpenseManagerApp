@@ -8,7 +8,7 @@
 <head>
 <jsp:include page="AllCss.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
-<title>ListAccountType</title>
+<title>Status Table</title>
 </head>
 <body>
 
@@ -20,12 +20,12 @@
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
     
-      <h1>General Tables</h1>
+      <h1>Status Table</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">AdminDashboard</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Manage</li>
+          <li class="breadcrumb-item active">Status</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -39,7 +39,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">List Status</h5>
                <div class="datatable-container">
               <!-- Default Table -->
               <table class="table datatable">

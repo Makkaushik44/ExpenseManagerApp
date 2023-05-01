@@ -19,6 +19,7 @@ public class HomeDao {
 
 	public Integer getTotalExpenseForCurrentDateForUser(Integer userId) {
 		String countQuery = "select sum(amount) from expense where date= ? and userId=?";
+		
 
 		// dd-mm-yyyy
 
@@ -112,6 +113,18 @@ public class HomeDao {
 	 		return stmt.query(selectQ, new BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class),new Object[] { userId});
 
 	 	}
+	  
+		/*
+		 * public List<ExpenseChartBean> getMonthWiseAverage(Integer userId) {
+		 * 
+		 * String
+		 * selectQ="select avg(amount), MONTH(date) as month from expense group by month"
+		 * ; return stmt.query(selectQ, new
+		 * BeanPropertyRowMapper<ExpenseChartBean>(ExpenseChartBean.class),new Object[]
+		 * {userId});
+		 * 
+		 * }
+		 */
 	
 
 }

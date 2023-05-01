@@ -4,6 +4,7 @@ public class UpdatePasswordBean {
       private String email;
       private String password;
       private String otp;
+      private Integer userId;
 	public String getEmail() {
 		return email;
 	}
@@ -21,6 +22,12 @@ public class UpdatePasswordBean {
 	}
 	public void setOtp(String otp) {
 		this.otp = otp;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
       
       

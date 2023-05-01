@@ -108,10 +108,31 @@ public class UserDao {
 	
 	public void updateProfile(UserBean userBean) {
 		System.out.println("hey this is update profile");
-		stmt.update("update users set firstName = ?",userBean.getFirstName());
+		
+		stmt.update("update users set firstName = ?, lastName=?, email=?, DOB=? where userId=?",userBean.getFirstName(),userBean.getLastName(),userBean.getEmail(),userBean.getDOB(),userBean.getUserId());
 		System.out.println("dao");
 		System.out.println(userBean.getFirstName());
 	}
+	
+	
+	/*
+	 * public UserBean getVerifyPassword(UpdatePasswordBean upBean, Integer userId)
+	 * { String selectQuery =
+	 * "select * from users where password  = ? as currentpassword and userId=?";
+	 * try { return stmt.queryForObject(selectQuery, new
+	 * BeanPropertyRowMapper<UserBean>(UserBean.class),new Object[] { upBean,userId
+	 * }); }catch(Exception e) { System.out.println(e.getMessage());
+	 * System.out.println("SMW --> UserDao:: getuserbypasswrod"); } return null; }
+	 * 
+	 * public void updateMyPasswordManual(UpdatePasswordBean upBean,Integer userId)
+	 * { String updateQuery="update users set password=? where userId=?";
+	 * stmt.update(updateQuery,upBean.getPassword(),userId); }
+	 */
+
+	
+	
+	
+	
 	
 	
 	

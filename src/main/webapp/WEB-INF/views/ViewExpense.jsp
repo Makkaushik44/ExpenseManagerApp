@@ -15,8 +15,8 @@
 <meta content="" name="keywords">
 
 <!-- Favicons -->
-<link href="../assets/img/favicon.png" rel="icon">
-<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../assets/img/logo-3.png" rel="icon">
+<link href="../assets/img/logo-3.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -49,15 +49,15 @@
 <body>
 
 
-<jsp:include page="AdminSideBar.jsp"></jsp:include>
+<jsp:include page="UserSideBar.jsp"></jsp:include>
 
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>Category</h1>
+      <h1>Expense</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admindashboard">Home</a></li>
+          <li class="breadcrumb-item"><a href="../home">Home</a></li>
           <li class="breadcrumb-item">Category</li>
           <li class="breadcrumb-item active">View Category</li>
         </ol>
@@ -118,7 +118,7 @@
                </table>
                
                
-               ExpenseId:-<%=expenseBean.getCategoryName()%>
+               
 
               <%-- <!-- Default Table -->
               <table class="table" border="1" >
@@ -147,7 +147,7 @@
               <div class="row mb-4">
                   <label class="col-sm-4 col-form-label"></label>
                   <div class="col-sm-8" align="right">
-                  <a type="button" href="../listexpesne" class="btn btn-primary" >Back</a>
+                  <a type="button" href="../listexpense" class="btn btn-primary" >Back</a>
                   </div>
                 </div>
              

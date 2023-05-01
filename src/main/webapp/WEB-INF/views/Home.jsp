@@ -33,9 +33,9 @@
 
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
+              <div class="card info-card customers-card">
 
-                <div class="filter">
+                <!-- <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -46,18 +46,18 @@
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
-                </div>
+                </div> -->
 
                 <div class="card-body">
                   <h5 class="card-title">Expense<span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                      <i class="bi bi-coin"></i>
                     </div>
                     <div class="ps-3">
                       <h6>${ExpenseUser==null?0:ExpenseUser }</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <!-- span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
 
                     </div>
                   </div>
@@ -68,9 +68,9 @@
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
+              <div class="card info-card customers-card">
 
-                <div class="filter">
+                <!-- <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -81,18 +81,18 @@
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
-                </div>
+                </div> -->
 
                 <div class="card-body">
                   <h5 class="card-title">Month Expense <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <i class="bi bi-coin"></i>
                     </div>
                     <div class="ps-3">
                       <h6>${UserMonthExpense==null?0:UserMonthExpense }</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <!-- <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
 
                     </div>
                   </div>
@@ -104,9 +104,9 @@
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
-              <div class="card info-card customers-card">
+              <div class="card info-card revenue-card">
 
-                <div class="filter">
+               <!--  <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -117,34 +117,32 @@
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
-                </div>
+                </div> -->
 
                 <div class="card-body">
-                  <h5 class="card-title">Month Income <span>| This Year</span></h5>
+                  <h5 class="card-title">Month Income <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                     <i class="bi bi-currency-dollar"></i>
                     </div>
                     
                     <div class="ps-3">
                       <h6>${UserMonthIncome==null?0:UserMonthIncome }</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
 
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
+                 
                   </div>
 
                 </div>
               </div>
 
             </div><!-- End Customers Card -->
-
+            
+            
+            
+        
            
 
                
@@ -197,7 +195,7 @@
 				List<ExpenseChartBean> pieChartDataUser = (List<ExpenseChartBean>) request.getAttribute("pieChartDataUser");
 				%>
 				
-      <div class="col-lg-6">             
+      <div class="col-lg-12">             
 <div class="card">
             <div class="card-body">
               <h5 class="card-title">Pie Chart</h5>
@@ -315,6 +313,70 @@
             </div>
           </div>
         </div>
+        
+        
+        
+        <%--   <%
+				List<ExpenseChartBean> average = (List<ExpenseChartBean>) request.getAttribute("average");
+				%>
+        
+        <!-- average chart -->
+         <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bar CHart</h5>
+
+              <!-- Bar Chart -->
+               <canvas id="barChart2" style="max-height: 400px; display: block; box-sizing: border-box; height: 400px; width: 827px;" width="1034" height="500"></canvas>
+               <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#barChart2'), {
+                    type: 'bar',
+                    data: {
+                      labels: [<%for (ExpenseChartBean e : average) {%>
+						 '<%=e.getMonth()%>',
+							<%}%>],
+                      datasets: [{
+                        label: 'Bar Chart',
+                        data:  [<%for (ExpenseChartBean e : average) {%>
+						<%=e.getExpenseAmount()%>,
+						<%}%>],
+                        backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                          'rgba(255, 205, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                          'rgb(255, 99, 132)',
+                          'rgb(255, 159, 64)',
+                          'rgb(255, 205, 86)',
+                          'rgb(75, 192, 192)',
+                          'rgb(54, 162, 235)',
+                          'rgb(153, 102, 255)',
+                          'rgb(201, 203, 207)'
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                });
+              </script>
+              <!-- End Bar CHart -->
+
+            </div>
+          </div>
+        </div> --%>
         
         
         

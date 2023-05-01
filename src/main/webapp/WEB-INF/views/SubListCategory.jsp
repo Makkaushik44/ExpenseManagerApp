@@ -19,12 +19,12 @@
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
     
-      <h1>General Tables</h1>
+      <h1>SubCategory Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">AdminDashboard</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Manage</li>
+          <li class="breadcrumb-item active">SubCategory</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -38,7 +38,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">List Subcatgeory</h5>
 
       <div class="datatable-container">
               <!-- Default Table -->
@@ -50,8 +50,8 @@
 	<tr>
 		<th>CategoryId</th>
 		<th>SubcategoryId</th>
-		<th>CategoryName</th>
 		<th>SubCategoryName</th>
+		<th>CategoryName</th>
 		<th>Deleted?</th>
 		<th>Action</th>
 	</tr>
@@ -61,11 +61,11 @@
 	<tr>
 		<td> <%=scb.getCategoryId()%> </td>
 		<td> <%=scb.getSubcategoryId()%> </td>
-        <td> <%=scb.getCategoryName()%> </td>		
-		<td> <%=scb.getSubcategoryName()%> </td>
+        <td> <%=scb.getSubcategoryName()%> </td>		
+		<td> <%=scb.getCategoryName()%> </td>
 		<td> <%=scb.getDeleted()%> </td>
 		<td>
-			<a href="deletesubcategory/<%=scb.getSubcategoryId()%>"><i class="bi bi-trash text-danger"></i> </a>
+			<a href="deletesubcategory/<%=scb.getSubcategoryId()%>"><i class="bi bi-trash text-danger"></i> </a>|
 			<a href="editsubcategory?subCategoryId=<%=scb.getSubcategoryId() %>"><i class="bi bi-pencil text-primary"></i></a>
 										</td>
 	</tr>

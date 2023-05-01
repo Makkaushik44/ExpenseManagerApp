@@ -24,21 +24,14 @@
 
     
      <li class="nav-heading">MANAGE</li>
-           <!-- Manage  data start -->
+    <!--        Manage  data start
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
          <i class="bi bi-menu-button-wide"></i><span>Manage Data</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         
-        
-        
-        
-        <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="expense">
-         <i class="ri-add-fill"></i><span>Add Expense</span><i ></i>
-        </a></li>
-        
+     
         
           <li>
             <a href="../listcategories">
@@ -77,11 +70,40 @@
           </li>
           
         </ul>
-      </li><!-- End Tables Nav -->
+      </li>End Tables Nav -->
+      
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="listcategories">
+         <i class="bi bi-list"></i><span>List Category</span><i ></i>
+        </a></li>
+        
+         <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="../sublistcategories">
+         <i class="bi bi-list-task"></i><span>List SubCategory</span><i ></i>
+        </a></li>
+        
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="../listaccounttype">
+         <i class="bi bi-person-vcard"></i><span>List AccountType</span><i ></i>
+        </a></li>
+        
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="../liststatus">
+         <i class="bi bi-check-square"></i><span>List Status</span><i ></i>
+        </a></li>
+      
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="../listvendor">
+         <i class="bi bi-people"></i><span>List Vendor</span><i ></i>
+        </a></li>
+        
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav"  href="../listuser">
+         <i class="bi bi-person-check"></i><span>List User</span><i ></i>
+        </a></li>
       
       
-      
-      
+     <!--  
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -106,14 +128,14 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Charts Nav -->
+      </li>End Charts Nav -->
 
       
 
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="myprofile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -123,8 +145,8 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
+        <a class="nav-link collapsed" href="logout">
+          <i class="bi bi-box-arrow-in-left"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->

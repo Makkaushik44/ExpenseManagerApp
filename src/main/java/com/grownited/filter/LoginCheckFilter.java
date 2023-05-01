@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 
-/*@Component*/
+@Component
 public class LoginCheckFilter implements Filter {
 
 	@Override

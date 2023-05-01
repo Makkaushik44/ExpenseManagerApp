@@ -14,8 +14,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo-3.png" rel="icon"><!--this is logo for localhost website logo//before new= favicon  -->
+  <link href="assets/img/logo-3.png" rel="logo-3"><!-- old=apple-touch-icon -->
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -60,7 +60,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
+                  <img src="assets/img/logo-3.png" alt="">
                   <span class="d-none d-lg-block">ExpenseManager</span>
                 </a>
               </div><!-- End Logo -->
@@ -114,7 +114,7 @@
                   </div>
                 </div>
                 
-                <fieldset class="row mb-3">
+                <!-- <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                   <div class="col-sm-9">
                     <div class="form-check">
@@ -131,7 +131,14 @@
                       </label>
                     </div>
                   </div>
-                </fieldset>
+                </fieldset> -->
+                <div class="col-12">
+                      <label for="yourName" class="form-label">Gender :</label>
+                      <br>
+                      	<input type="radio" name="gender" value="male" checked> Male
+						<input type="radio" name="gender" value="female" > Female
+						
+                     </div>
 
                     <div class="col-12">
                       <div class="form-check">

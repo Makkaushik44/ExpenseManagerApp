@@ -3,6 +3,7 @@ package com.grownited.bean;
 public class ForgetPasswordBean {
 	
 	public String email;
+	private String password;
 
 	public String getEmail() {
 		return email;
@@ -11,5 +12,14 @@ public class ForgetPasswordBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 }

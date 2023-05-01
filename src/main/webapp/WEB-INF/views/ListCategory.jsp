@@ -19,12 +19,12 @@
 <main id="main" class="main">
 <jsp:include page="AdminHeader.jsp"></jsp:include>
     <div class="pagetitle">
-      <h1>General Tables</h1>
+      <h1>Category Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">AdminDashboard</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Manage</li>
+          <li class="breadcrumb-item active">Category</li>
         </ol>
       </nav>
      
@@ -42,7 +42,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">List Category</h5>
               
         <div class="datatable-container">
               <!-- Default Table -->
